@@ -10,7 +10,7 @@ HELOO CHAPP USERS
         <% @messages.each do |message| %>
             <div class="chat__message">
                 <span class="chat__message-user"><%= message.user_name%>: <%= message.body%></span>
-                <small><%= Time.at(message.created_at) %></small>
+                <small><%= message.created_at %></small>
             </div>
         <% end %>
     </div>

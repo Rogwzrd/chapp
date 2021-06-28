@@ -11,3 +11,8 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// in leiu of streamable data to check input of new messages we will reload the page every 15 seconds
+window.setTimeout(function () {
+    window.location.reload();
+}, 15000);
