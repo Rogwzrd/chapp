@@ -1,7 +1,5 @@
 class MessagesController < ApplicationController
 
-    before_action :load_messages
-
     def index
         @messages = Message.all
     end
@@ -11,12 +9,7 @@ class MessagesController < ApplicationController
         if @message.save
             redirect_to '/'
         else
-            flash[:error] =  'sorry the message did not complete'
+            flash[:error] =  'sorry, the message did not save'
         end
-    end
-    private 
-
-    def load_messages
-        @messages = Message.all
     end
 end
