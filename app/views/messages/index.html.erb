@@ -1,0 +1,24 @@
+<h1>
+HELOO CHAPP USERS
+</h1>
+
+<div class="chat">
+    <div class='chat__title'>
+    chat log
+    </div>
+    <div class="chat__container">
+        <%= @messages.each do |message|%>
+            <div class="chat__message">
+            <span class="chat__message-user"><%= message.user_name%>: <%= message.body%></span>
+            <small><%= Time.at(message.created_at) %></small>
+        <% end %>
+    </div>
+
+    <%= form_with url: '/messages', method: :post do |form|%>
+        <%= form.label :body, "message body:" %>
+        <%= form.text_field :body %>
+        <%= form.label :body, "username:" %>
+        <%= form.text_field :user_name %>
+        <%= form.submit "Submit" %>
+    <% end %>
+</div>
