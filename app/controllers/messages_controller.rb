@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
             redirect_to '/'
         else
             flash[:error] =  'sorry, the message did not save'
+            redirect_to '/'
         end
     end
 end
